@@ -4,7 +4,7 @@ import { FaHeart } from 'react-icons/fa';
 function Footer() {
     const footyear=new Date().getFullYear();
   return (
-   <footer className="footer p-10 bg-gray-900 text-primary-content footer-center">
+   <footer className="footer p-6 bg-gray-900 text-primary-content footer-center">
    <div>
    <svg
           width='50'
