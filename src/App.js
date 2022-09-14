@@ -4,11 +4,14 @@ import Footer from './components/layouts/Footer'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Notfound from './Pages/Notfound'
+import {GithubProvider} from './context/github/GithubContext'
+
 
 
 
 function App() {
   return (
+    <GithubProvider>
     <Router>
     <div className="flex flex-col justify-between h-screen">
     <Navbar />
@@ -28,6 +31,7 @@ function App() {
 
     </div>
     </Router>
+    </GithubProvider>
   );
 
 }
