@@ -1,5 +1,6 @@
-import { set } from 'mongoose'
 import React,{useState,useEffect} from 'react'
+import Spinner from '../components/layouts/Spinner'
+import Useritems from '../components/users/Useritems'
 // import Userlists from '../components/users/Userlists'
 
 function Home() {
@@ -25,7 +26,7 @@ function Home() {
     return (
       <div className="grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
         {users.map((user)=>(
-          <h1>{user.login}</h1>
+          <Useritems key={user.id} user={user}/>
         ))}
         
       </div>
@@ -33,7 +34,7 @@ function Home() {
 
   }
   else{
-    return <h1>Loading...</h1>
+    return <Spinner />
   }
   
 }
