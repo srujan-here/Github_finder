@@ -18,32 +18,39 @@ const initialState ={
 
 //get initial users
 
-  const getusers = async ()=>{
+  const searchusers = async (text)=>{
     setloading()
+    const params=new URLSearchParams({q:text})
 
-    const response = await fetch(`${GITHUB_URL}/users`)
+    const response = await fetch(`${GITHUB_URL}/search/users?${params}`)
 
-    const data= await response.json()
+    const {items}= await response.json()
     // setusers(data)
     // setloading(false)
 
     dispatch({
         type: 'GET_USERS',
-        payload: data
+        payload: items,
     })
   }
 
   const [state,dispatch] = useReducer(githubReducer,initialState)
 
-
+// setloading
 const setloading =()=>{
     dispatch({type: 'SET_LOADING'})
+}
+
+//clearusers
+const clearusers=()=>{
+    console.log('clearusers')
+    dispatch({type: 'CLEAR_USERS'})
 }
 
     
 
 
-    return <GithubContext.Provider value={{users:state.users,loading:state.loading,getusers}}>
+    return <GithubContext.Provider value={{users:state.users,loading:state.loading,searchusers,clearusers}}>
     {children}
   </GithubContext.Provider>
 
