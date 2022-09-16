@@ -2,8 +2,12 @@ import React from 'react'
 
 function About() {
   return (
-    <div>
-      <h1>About</h1>
+    <div className="container">
+      <div className="flex flex-row justify-between">
+       <div className="flex">hai</div>
+       <div className="flex">Bye</div>
+      </div>
+     
     </div>
   )
 }
