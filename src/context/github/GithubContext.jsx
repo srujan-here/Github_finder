@@ -15,6 +15,7 @@ export const GithubProvider=({children})=>{
 const initialState ={
     users:[],
     user:{},
+    repos:[],
     loading:false,
 }
 
@@ -68,6 +69,30 @@ const initialState ={
     
   }
 
+
+
+  const getrepos= async (login)=>{
+    const params =new URLSearchParams({
+      sort:'created',
+      per_page:10,
+    })
+
+
+
+    const response= await fetch(`${GITHUB_URL}/users/${login}/repos?${params}`)
+    if(response.status===404){
+      window.location='/notfound'
+    }
+    else{
+      const data= await response.json()
+      dispatch({
+        type: 'GET_REPOS',
+        payload: data,
+    })
+
+
+  }
+  }
   const [state,dispatch] = useReducer(githubReducer,initialState)
 
 // setloading
@@ -84,14 +109,14 @@ const clearusers=()=>{
     
 
 
-    return <GithubContext.Provider value={{users:state.users,user:state.user,getuser,loading:state.loading,searchusers,clearusers}}>
+    return <GithubContext.Provider value={{users:state.users,user:state.user,getuser,getrepos,repos:state.repos,loading:state.loading,searchusers,clearusers}}>
     {children}
   </GithubContext.Provider>
 
   }
 
 
-  
+
 
 
 
