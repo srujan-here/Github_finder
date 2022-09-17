@@ -9,7 +9,7 @@ function Navbar({title}) {
     <div className="container mx-auto">
        <div className="flex-none mx-2 px-2 ">
        <FaGithub className="inline pr-2 text-4xl" />
-       <Link to='/sru' className="text-lg align-middle font-bold ">
+       <Link to='/' className="text-lg align-middle font-bold ">
         {title}
        </Link>
         </div>
@@ -25,6 +25,7 @@ function Navbar({title}) {
 
             </div>
         </div>
+        
         
     </div>
     </nav>
