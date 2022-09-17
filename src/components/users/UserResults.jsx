@@ -8,11 +8,6 @@ function UserResults() {
 
   const {users,loading} = useContext(GithubContext)
   
-  
-  // useEffect(() =>{
-  //   getusers()
-
-  // },[])
 
   
 if(!loading){
