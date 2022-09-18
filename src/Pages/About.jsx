@@ -12,8 +12,18 @@ function About() {
   </p>
   <p className='text-lg text-gray-400'>
     Layout By:
-    <a className='text-white' href='https://twitter.com/This_IsSrujan'>
+    <a className='text-white px-3' href='https://twitter.com/This_IsSrujan'>
      Srujan Putta
+    </a>
+  </p>
+
+
+  {/* repo details */}
+
+  <p className='text-lg text-gray-400'>
+    Wanna Contribute to the Project ? :
+    <a className='text-white p-3' href='https://github.com/srujan-here/Github_finder' target='_blank'>
+    Git Repo
     </a>
   </p>
   </>
