@@ -14,7 +14,7 @@ function RepoItems({repo}) {
       } = repo
 
 
-  return <div className="rounded-md mb-2 card bg-gray-800 hover:bg-gray-900">
+  return <div className="rounded-md mb-2 card ">
     <div className="card-body">
         <h3 className="mb-2 text-xl font-semibold">
             <a href={html_url}>
